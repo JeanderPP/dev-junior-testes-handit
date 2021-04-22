@@ -93,4 +93,29 @@ describe("Teste de lógica - Handit Sistemas - Dev Junior", function () {
     );
     expect(preco_total_produtos_f).toBe(29000);
   });
+
+  it("Verificar se uma palavra ou frase é palíndroma", () => {
+    function verificaPalindroma(palavra) {
+      return false;
+    }
+
+    expect(verificaPalindroma("Renner")).toBe(true);
+    expect(verificaPalindroma("Omissíssimo")).toBe(true);
+    expect(verificaPalindroma("Terra")).toBe(false);
+    expect(verificaPalindroma("Teste")).toBe(false);
+    expect(verificaPalindroma("A base do teto desaba")).toBe(true);
+    expect(verificaPalindroma("A Daniela ama a lei? Nada!")).toBe(true);
+    expect(verificaPalindroma("A diva em Argel alegra-me a vida")).toBe(true);
+    expect(verificaPalindroma("Aí, Lima falou: “Olá, família!”")).toBe(true); //
+    expect(verificaPalindroma("Amo Omã. Se Roma me tem amores, amo Omã!")).toBe(
+      true
+    );
+    expect(
+      verificaPalindroma(
+        'Luza Rocelina, a namorada do Manuel, leu na moda da romana: "anil é cor azul"'
+      )
+    ).toBe(true);
+    expect(verificaPalindroma("Zé de Lima, Rua Laura, mil e dez")).toBe(true);
+    expect(verificaPalindroma("Parabéns se você chegou até aqui")).toBe(false);
+  });
 });
