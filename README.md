@@ -4,7 +4,7 @@
 - O candidato deve implementar as funções necessárias para que os testes "tests/handit.spec.js" passem.
 
 ### Como fazer:
-- Acessar o endereço https://codesandbox.io/s/hungry-fermi-d7ing
+- Acessar o endereço https://codesandbox.io/s/hungry-fermi-d7ing?file=/tests/handit.spec.js
 - Criar um Fork
 - Abrir arquivo "tests/handit.spec.js"
   - Em cada caso de teste (it), existe uma função para implementar
