@@ -34,7 +34,12 @@ describe("Teste de lógica - Handit Sistemas - Dev Junior", function () {
 
   it("Retornar uma lista com os produtos selecionados", () => {
     function get_produtos_selecionados(lista) {
-      return [];
+      let lista_selecionados = [];
+      lista.forEach(function (produto) {
+        if (produto.selecionado) lista_selecionados.push(produto);
+      });
+      return lista_selecionados;
+    }
     }
 
     let produtos_selecionados = get_produtos_selecionados(lista_produtos);
@@ -49,8 +54,12 @@ describe("Teste de lógica - Handit Sistemas - Dev Junior", function () {
   });
 
   it("Somar o preço unitário de TODOS os produtos", () => {
-    function get_soma_preco_unitario(lista) {
-      return 0;
+     function get_soma_preco_unitario(lista) {
+      let total = 0;
+      lista.forEach(function (produto) {
+        total += produto.preco_unitario;
+      });
+      return total;
     }
 
     let soma_preco_unitario = get_soma_preco_unitario(lista_produtos);
@@ -58,9 +67,12 @@ describe("Teste de lógica - Handit Sistemas - Dev Junior", function () {
   });
 
   it("Somar o preço unitário dos produtos com preço unitário maior que 600", () => {
-    function get_soma_preco_unitario_maior_600(lista) {
-      return 0;
-    }
+function get_soma_preco_unitario_maior_600(lista) {
+      let total = 0;
+      lista.forEach(function (produto) {
+        if (produto.preco_unitario > 600) total += produto.preco_unitario;
+      });
+      return total;
 
     let soma_preco_unitario_maior_600 = get_soma_preco_unitario_maior_600(
       lista_produtos
@@ -74,6 +86,10 @@ describe("Teste de lógica - Handit Sistemas - Dev Junior", function () {
     }
 
     let lista_concatenada = concatenar_nome_e_preco_unitario(lista_produtos);
+      function concatenar_nome_e_preco_unitario(lista) {
+      let lista_selecionados = [];
+      lista_selecionados.push(produto.name + "_" + produto.preco_unitario);
+      return lista_selecionados;
 
     expect(lista_concatenada.length).toBe(5);
     expect(lista_concatenada[0]).toBe("Geladeira_2500");
@@ -84,7 +100,11 @@ describe("Teste de lógica - Handit Sistemas - Dev Junior", function () {
   });
 
   it("Somar o preço total (quantidade_estoque * preco_unitario) dos produtos que começam com 'F'", () => {
-    function get_soma_preco_total_produtos_F(lista) {
+   function get_soma_preco_total_produtos_F(lista) {
+      let total = 0;
+        lista.forEach(function(produto){
+          if(produto.indexOf('F')>=0)total +=(produto.quantidade_estoque*produto.soma_preco_unitario);
+        })
       return 0;
     }
 
